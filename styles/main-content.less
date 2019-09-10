@@ -1,0 +1,169 @@
+.main-content {
+  .reduced-width();
+  .flex-settings(row, center, center);
+  flex-wrap: wrap;
+  padding: 20vh 0; // 100px 0
+  @media @mobile, @tablet {
+    width: 100%;
+    flex-flow: column nowrap;
+    padding: 5rem 0 0 0;
+  }
+  &.about-page {
+    padding: 5vh 0;
+  }
+  .main-content-section {
+    position: relative;
+    padding: 1rem 3rem;
+    width: 45%;
+    height: @default-height; //300px
+    .flex-settings(column, space-evenly, flex-start);
+    @media @mobile, @tablet {
+      padding: 0 2rem;
+      width: 100%;
+      height: @default-height-responsive;
+      align-items: center;
+      p {
+        text-align: center;
+      }
+    }
+    &.all-width {
+      width: 90%;
+      height: auto;
+      @media @mobile, @tablet {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+      }
+    }
+    &.section-about-page {
+      width: 100%;
+      padding: 1rem 0;
+      height: @height-content-about-page;
+      .flex-settings(row, space-evenly, center);
+      border-bottom: 1px solid @menu-separator-footer;
+      @media @mobile {
+        flex-direction: column;
+      }
+      .about-people-photo {
+        width: 50%;
+        .flex-settings(row, center, center);
+        @tablet {
+          width: 33%;
+        }
+        @media @mobile {
+          width: 100%;
+        }
+        img {
+          border-radius: 50%;
+          object-fit: cover;
+          object-position: 10% 10%;
+          // text-align: center;
+          // max-width: 100%;
+          // max-height: 100%;
+          width: @height-photo-about-page;
+          height: @height-photo-about-page;
+          @media @mobile, @tablet {
+            width: 8rem;
+            height: 8rem;
+          }
+        }
+      }
+      .about-people-content {
+        // border: 1px solid purple;
+        width: 50%;
+        @media @tablet {
+          p {
+            font-size: 0.8rem;
+          }
+          h2 {
+            font-size: 1rem;
+          }
+        }
+        @media @mobile {
+          width: 100%;
+          .flex-settings(row, space-evenly, center);
+          p {
+            font-size: 0.8rem;
+          }
+          h2 {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+    &:nth-child(even) {
+      // border: 1px solid purple;
+      flex-direction: row-reverse;
+      @media @mobile {
+        flex-direction: column;
+      }
+    }
+
+    .window {
+      width: 300px;
+      height: 200px;
+      border: 1px solid #d8d8d8;
+      border-top-left-radius: 0.25rem;
+      border-top-right-radius: 0.25rem;
+      background: #f8f8f8;
+      box-shadow: 5px 5px 15px #d0d0d0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: stretch;
+
+      .buttons {
+        flex-grow: 1;
+
+        div {
+          max-width: 0.5rem;
+          height: 0.5rem;
+          border-radius: 50%;
+          margin: 0 0.1rem;
+        }
+
+        .red-button {
+          background: red;
+          margin-left: 0.2rem;
+        }
+        .yellow-button {
+          background: #f7e76a;
+        }
+        .green-button {
+          background: #63bb81;
+        }
+      }
+      .text {
+        flex-grow: 9;
+      }
+    }
+    .window2 {
+      position: absolute;
+      top: 4.5rem;
+      left: 4.5rem;
+      z-index: 0;
+    }
+    .window3 {
+      position: absolute;
+      top: 7.5rem;
+      left: 7.5rem;
+      z-index: 0;
+    }
+    .main-content-photo {
+      width: 80%; //300px;
+      height: @default-height;
+      @media @mobile, @tablet {
+        height: @default-height-responsive;
+        width: 80%;
+        text-align: center;
+      }
+      img {
+        @media @mobile, @tablet {
+          width: auto;
+          height: 100%;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

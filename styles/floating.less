@@ -1,0 +1,90 @@
+.floating {
+  .reduced-width();
+  position: absolute;
+  top: @home-top-float;
+  left: 7.5%;
+  height: @home-float-height;
+  box-shadow: 0.1rem 0.1rem 1rem @gray-nav;
+  .flex-settings(row, space-between, center);
+  background-color: white;
+  border-radius: 0.5rem;
+  &.login-page {
+    top: @login-top-float;
+    height: @login-float-height;
+    @media @mobile, @tablet {
+      height: @login-top-float-responsive;
+    }
+  }
+  @media @mobile, @tablet {
+    .flex-settings(column, space-between, center);
+    flex-wrap: nowrap;
+    top: @home-top-float-responsive;
+    height: @home-float-height-responsive;
+    z-index: 1;
+  }
+  .float-left-image {
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    height: @home-float-height;
+    width: 30%;
+    background-color: @background-blue-photo;
+    &.login-page {
+      height: @login-float-height;
+    }
+    .flex-settings(row, center, center);
+    @media @mobile, @tablet {
+      width: 100%;
+    }
+    img {
+      width: auto;
+      height: 90%;
+      margin: 0 auto;
+    }
+  }
+  .float-right-text {
+    width: 70%;
+    padding: 2rem;
+    .text-input-wrapper {
+      position: relative;
+      .text-input {
+        display: block;
+        border: 1px solid @gray-nav;
+        border-radius: 0.25rem;
+        height: 3rem;
+        width: 70%;
+        margin: 1rem 0;
+        padding: 1rem 0;
+        @media @mobile, @tablet {
+          width: 100%;
+        }
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        top: -0.5rem;
+        left: 1rem;
+        background-color: @white;
+        padding: 0 0.5rem;
+      }
+      &.text-input-email::before {
+        content: "email";
+      }
+      &.text-input-password::before {
+        content: "password";
+      }
+    }
+    button {
+      .main-button();
+      width: 70%;
+      margin: 1rem 0;
+      height: 3rem;
+      font-size: 1rem;
+      @media @mobile, @tablet {
+        width: 100%;
+      }
+    }
+    @media @mobile, @tablet {
+      width: 100%;
+    }
+  }
+}
